@@ -13,8 +13,13 @@ public class Resuelta5_3 {
             tabla[i]= sc.nextInt();
         }
         System.out.println(Arrays.toString(tabla));
-    }
+        //Mostrar tabla creada.
 
+        System.out.println("Los números en orden inverso son: ");
+        for (int i= tabla.length - 1;i >= 0 ; i --){
+            System.out.println(tabla[i]);
+        }
+    }
     }
 
 
