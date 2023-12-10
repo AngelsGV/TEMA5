@@ -22,35 +22,43 @@ public class Actividad5_3 {
         //Mostrar tabla creada.
         // No lo pide el ejercicio, pero lo encuentro necesario para ver si el inicio del programa funciona como toca
         // y para controlar que las funciones calculan correctamente.
-        mediaP(tabla,n);
+        mediaP(tabla);
         //Se llama a la función que calcula la media de los positivos.
-        mediaN(tabla,n);
+        mediaN(tabla);
         //Se llama a la función que calcula la media de los negativos.
         zeros(tabla);
         //Se llama a la función que cuenta los zeros.
     }
-    static int mediaP(int t[], int n){
-
+    static int mediaP(int t[]){
+        //Uso int porque devolverá números.
+        int sumaP = 0;
+        int cantidadP = 0;
+        // Como pides la media de los positivos, el divisor no será n. Será el num de positivos que haya en el array.
         int medP = t[0];
         for (int e:t){
             if (e > 0) {
-                int med = e/n;
-                medP += med;
+                cantidadP ++;
+                sumaP += e;
             }
         }
+        medP = sumaP/cantidadP;
         System.out.println("El valor medio de los números positivos  es: " + medP);
         return (medP);
 
     }
-    static int mediaN(int t[], int n){
-
+    static int mediaN(int t[]){
+        //Uso int porque devolverá números.
+        int sumaN = 0;
+        int cantidadN = 0;
+        // Como pides la media de los negativos, el divisor no será n. Será el num de positivos que haya en el array.
         int medN = t[0];
         for (int e:t){
             if (e > 0) {
-                int med = e/n;
-                medN += med;
+                cantidadN ++;
+                sumaN += e;
             }
         }
+        medN = sumaN/cantidadN;
         System.out.println("El valor medio de los números positivos  es: " + medN);
         return (medN);
 
