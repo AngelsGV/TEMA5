@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class Actividad5_4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Introduzca el valor clave: ");
         int clave = sc.nextInt();
+
         System.out.println("Introduzca la cantidad de números que quiere la matriz: ");
         int n = sc.nextInt();
         //Números que va a tener el array.
@@ -17,7 +19,7 @@ public class Actividad5_4 {
             n = sc.nextInt();
         }
 
-        int tabla[] = new int[n];
+        int[] tabla = new int[n];
         // Se introduce el nombre del array y los números que va a tener.
         // En este caso serán los introducidos por el usuario.
 
@@ -32,24 +34,26 @@ public class Actividad5_4 {
         System.out.println(Arrays.toString(tabla));
         //Mostrar tabla creada.
         // No lo pide el ejercicio, pero lo encuentro necesario para ver si el inicio del programa funciona como toca
-        // y para controlar que las funciones calculan correctamente.
+        // y para controlar que la función se aplique como toca.
 
         buscar(tabla, clave);
     }
-
-    static int buscar(int t[], int clave) {
+    // e es la posición, por lo que la primera posición es el valor 0 en un array.
+    //e no tiene que superar el largo de la tabla, que en este ejercicio será n,el valor introducido por el usuario
+    // se irá incrementando e en un valor a cada vez que se ejecute el bucle.
+    static int buscar(int[] t, int clave) {
         for (int e = 0; e < t.length; e++) {
-        // e es la posición, por lo que la primera posición es el valor 0 en un array.
-        //e no tiene que superar el largo de la tabla, que en este ejercicio será n,el valor introducido por el usuario
-        // se irá incrementando e en un valor a cada vez que se ejecute el bucle.
-
+            // e es la posición, por lo que la primera posición es el valor 0 en un array.
+            //e no tiene que superar el largo de la tabla, que en este ejercicio será n,el valor introducido por el usuario
+            // se irá incrementando e en un valor a cada vez que se ejecute el bucle.
             if (t[e] == clave) {
                 System.out.println("La clave " + clave + " se encuentra en la posición " + e);
                 return e;
+            }
         }
 
         System.out.println("La clave " + clave + " no se encuentra en la tabla.");
-        return -1;
+        return -1; // No se encontró la clave en la tabla
     }
 }
 //No tengo claro como o si podría poner un return global con en el bucle for y usando if-else.
