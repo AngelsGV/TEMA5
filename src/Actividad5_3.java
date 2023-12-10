@@ -40,8 +40,7 @@ public class Actividad5_3 {
                 cantidadP ++;
                 sumaP += e;
             }
-        }
-        medP = sumaP/cantidadP;
+        }medP = sumaP/cantidadP;
         System.out.println("El valor medio de los números positivos  es: " + medP);
         return (medP);
 
@@ -57,9 +56,9 @@ public class Actividad5_3 {
                 cantidadN ++;
                 sumaN += e;
             }
-        }
-        medN = sumaN/cantidadN;
-        System.out.println("El valor medio de los números positivos  es: " + medN);
+        }medN = sumaN/cantidadN;
+
+        System.out.println("El valor medio de los números negativos es: " + medN);
         return (medN);
 
     }
