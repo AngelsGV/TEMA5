@@ -76,3 +76,17 @@ public class Actividad5_3 {
     }
 }
 
+//Problemas al hacer el ejercicio:
+//Con las funciones que no tienen 0 me cuenta el negativo.
+// static int zeros(int t[]){
+//
+//        int z = t[0];
+//        for (int e:t){
+//            if (e == 0) {
+//                z++;
+//            }
+//        }
+//        System.out.println("La cantidad de zeros que hay en la martriz es: " + z);
+//        return (z);
+//
+//    }
