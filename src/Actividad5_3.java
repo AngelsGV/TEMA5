@@ -29,34 +29,35 @@ public class Actividad5_3 {
         zeros(tabla);
         //Se llama a la función que cuenta los zeros.
     }
-    static int mediaP(int t[]){
-        //Uso int porque devolverá números.
+    static double mediaP(int t[]){
+        //Uso double porque devolverá números que pueden ser con decimales.
         int sumaP = 0;
         int cantidadP = 0;
         // Como pides la media de los positivos, el divisor no será n. Será el num de positivos que haya en el array.
-        int medP = t[0];
+        double medP;
         for (int e:t){
             if (e > 0) {
                 cantidadP ++;
                 sumaP += e;
             }
-        }medP = sumaP/cantidadP;
+        }
+        medP = (double) sumaP/cantidadP;
         System.out.println("El valor medio de los números positivos  es: " + medP);
         return (medP);
 
     }
-    static int mediaN(int t[]){
-        //Uso int porque devolverá números.
+    static double mediaN(int t[]){
+        //Uso double porque devolverá números que pueden ser no enteros.
         int sumaN = 0;
         int cantidadN = 0;
         // Como pides la media de los negativos, el divisor no será n. Será el num de positivos que haya en el array.
-        int medN = t[0];
+        double medN;
         for (int e:t){
             if (e > 0) {
                 cantidadN ++;
                 sumaN += e;
             }
-        }medN = sumaN/cantidadN;
+        }medN = (double) sumaN/cantidadN;
 
         System.out.println("El valor medio de los números negativos es: " + medN);
         return (medN);
@@ -70,6 +71,7 @@ public class Actividad5_3 {
                 z++;
             }
         }
+
         System.out.println("La cantidad de zeros que hay en la martriz es: " + z);
         return (z);
 
