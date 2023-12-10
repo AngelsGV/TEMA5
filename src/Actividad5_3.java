@@ -7,6 +7,11 @@ public class Actividad5_3 {
         System.out.println("Introduzca la cantidad de números que quiere la matriz: ");
         int n= sc.nextInt();
         //Números que va a tener el array.
+        // Validar que n sea un número no negativo
+        while (n <= 0) {
+            System.out.println("Por favor, introduzca un número positivo para la cantidad de números: ");
+            n = sc.nextInt();
+        }
         int tabla[] = new int[n];
         // Se introduce el nombre del array y los números que va a tener.
         // En este caso serán los introducidos por el usuario.
@@ -39,6 +44,8 @@ public class Actividad5_3 {
             if (e > 0) {
                 cantidadP ++;
                 sumaP += e;
+                System.out.println(e);
+
             }
         }
         medP = (double) sumaP/cantidadP;
@@ -53,11 +60,11 @@ public class Actividad5_3 {
         // Como pides la media de los negativos, el divisor no será n. Será el num de positivos que haya en el array.
         double medN;
         for (int e:t){
-            if (e > 0) {
+            if (e < 0) {
                 cantidadN ++;
                 sumaN += e;
             }
-        }medN = (double) sumaN/cantidadN;
+        }if (cantidadN!=0) medN = (double) sumaN/cantidadN; else medN=0;
 
         System.out.println("El valor medio de los números negativos es: " + medN);
         return (medN);
@@ -65,7 +72,7 @@ public class Actividad5_3 {
     }
     static int zeros(int t[]){
 
-        int z = t[0];
+        int z = 0;
         for (int e:t){
             if (e == 0) {
                 z++;
@@ -90,5 +97,25 @@ public class Actividad5_3 {
 //        }
 //        System.out.println("La cantidad de zeros que hay en la martriz es: " + z);
 //        return (z);
+//
+//    }
+// En este caso el error estaba en que no iniciaba la suma de z en 0. La iniciaba en el primer valor de la tabla.
+
+//Tanto en negativo como en positivo:
+//Primer error, no pensar que la media puede tener decimales.
+// static double mediaN(int t[]){
+//        int sumaN = 0;
+//        int cantidadN = 0;
+//
+//        double medN;
+//        for (int e:t){
+//            if (t[e-1] < 0) {
+//                cantidadN ++;
+//                sumaN += t[e-1];
+//            }
+//        }if (cantidadN!=0) medN = (double) sumaN/cantidadN; else medN=0;
+//
+//        System.out.println("El valor medio de los números negativos es: " + medN);
+//        return (medN);
 //
 //    }
