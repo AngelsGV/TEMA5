@@ -24,6 +24,9 @@ public class Resuelta5_5 {
                 i++;
             }
             Arrays.sort(pares);
-        }return (pares);
+
+        }
+        System.out.println(Arrays.toString(pares));
+        return (pares);
     }
 }
