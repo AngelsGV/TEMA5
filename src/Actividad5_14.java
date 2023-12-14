@@ -23,7 +23,6 @@ public class Actividad5_14 {
         // No lo pide el ejercicio, pero lo encuentro necesario para ver si el inicio del programa funciona como toca
         // y para controlar que la función se aplique como toca.
 
-        buscar(tabla, clave);
     }
     static void entrada ( int n){
         while (n <= 0) {
