@@ -18,4 +18,5 @@ public class Resuelta5_1 {
         }
         System.out.println("La suma de los valores aleatorios es: " + suma);
     }
+
 }
