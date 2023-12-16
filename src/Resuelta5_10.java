@@ -15,8 +15,10 @@ public class Resuelta5_10 {
         System.out.println(Arrays.toString(t));
         System.out.println("¿Qué valor quieres que sea  el máximo en la tabla?");
         int valor = sc.nextInt();
+        Arrays.sort(t);
 
         sinMayores(t,valor);
+
 
     }
     static int[] sinMayores(int t[],int valor){
