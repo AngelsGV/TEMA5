@@ -16,18 +16,49 @@ public class Aplicación5_14 {
         // Creo que la 1ª opción es la más óptima.
         boolean seguirPreguntando = true; //Lo iniciamos en true porque vamos a poner la condicion en false.
 
-        while ( sueldo != -1) {
+        while (sueldo != -1) {
             System.out.println("Introduce el sueldo (finaliza con -1): ");
             sueldo = sc.nextDouble();
-            for (int i=0; i< sueldos.length; i++) {
+            for (int i = 0; i < sueldos.length; i++) {
                 sueldos[i] = sueldo;
             }
             if (sueldo == -1) {
                 seguirPreguntando = false;
             }
 
-        }System.out.println(Arrays.toString(sueldos));
+        }
+        System.out.println(Arrays.toString(sueldos));
+        maxSueldos(sueldos);
+        minSueldos(sueldos);
 
     }
-}
 
+    static double maxSueldos(double t[]) {
+        // Vamos a crear una función para cada apartado del problema. En este caso la función calculará el max.
+        double max = t[0];
+        // Indicamos que max está en indice 0 para poder recorrer el array buscando el maximo real,
+        for (double sueldo : t) { // e serán los valores del Array t, que será sueldos.
+                if (sueldo > max) {
+                    sueldo = max;
+                }
+                System.out.println("El valor máximo será: " + max);
+
+        }return max;
+    }
+    static double minSueldos(double t[]) {
+        // Vamos a crear una función para cada apartado del problema. En este caso la función calculará el max.
+        double min = t[0];
+        // Indicamos que max está en indice 0 para poder recorrer el array buscando el maximo real,
+        for (double sueldo : t) { // e serán los valores del Array t, que será sueldos.
+            if (sueldo < min) {
+                sueldo = min;
+            }
+            System.out.println("El valor minimo será: " + min);
+
+        }return min;
+    }
+
+}
+// ----------------------------------------------------
+//PROBLEMAS:
+// - Cuando sale del bucle para introducir los datos, el array no se ha generado correctamente.
