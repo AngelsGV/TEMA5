@@ -4,8 +4,8 @@ public class Aplicacion5_14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double sueldo = 0;
-
-        double[] sueldos = new double[2]; //El sueldo puede ser con decimales.
+        int cont=0;
+        double[] sueldos = new double[1]; //El sueldo puede ser con decimales.
         // Empezamos la tabla con longitud uno y luego la incrementaremos a medida que vayamos introduciendo valores.
         // Actualización 2.0. --> He puesto que la longitud sea 2 para tener más margen de error,
         // pero el principio que usaré es el anterior.
@@ -14,17 +14,23 @@ public class Aplicacion5_14 {
         // ocuparía memoria pero el recolector de basura se haría cargo.
         // Creo que la 1ª opción es la más óptima.
         boolean seguirPreguntando = true; //Lo iniciamos en true porque vamos a poner la condicion en false.
-
+        //for(int cont;sueldo!=-1;cont++)
         while (sueldo != -1) {
             System.out.println("Introduce el sueldo (finaliza con -1): ");
             sueldo = sc.nextDouble();
-            for (int i = 0; i < sueldos.length; i++) {
+
+
+            /*for (int i = 0; i < sueldos.length; i++) {
                 sueldos[i] = sueldo;
-            }
+            }*/
             if (sueldo == -1) {
                 seguirPreguntando = false;
             }
-
+            else {
+                sueldos = Arrays.copyOf(sueldos,sueldos.length +1);
+                sueldos[cont] = sueldo;
+                cont++;
+            }
         }
         System.out.println(Arrays.toString(sueldos));
 
@@ -33,6 +39,8 @@ public class Aplicacion5_14 {
         ordenDecreciente(sueldos);
         maxSueldos(sueldos);
         minSueldos(sueldos);
+        System.out.println("La media de los sueldos es: " + mediaSueldos(sueldos,sueldos.length));
+        //El último te lo escribo así para que veas que si que sé usar las funciones que devuelven valores ya.
 
     }
 
@@ -44,8 +52,8 @@ public class Aplicacion5_14 {
                 if (sueldo > max) {
                     sueldo = max;
                 }
-                System.out.println("El valor máximo será: " + max);
         }
+        System.out.println("El valor máximo será: " + max);
     }
     static void minSueldos(double[] t) {
         // Vamos a crear una función para cada apartado del problema. En este caso la función calculará el min.
@@ -55,9 +63,8 @@ public class Aplicacion5_14 {
             if (sueldo < min) {
                 sueldo = min;
             }
-            System.out.println("El valor minimo será: " + min);
-
         }
+        System.out.println("El valor minimo será: " + min);
     }
     static void ordenDecreciente(double[] t){ //No hace falta gastar in, porque no devuelve un calculo núerico como tal.
 
@@ -70,6 +77,14 @@ public class Aplicacion5_14 {
                 System.out.println(t[i]);
             }
         }
+    }
+    static double mediaSueldos(double[] t, int n){
+        double sumaSueldos = 0;
+        for (double sueldo : t){
+           sumaSueldos =+ sueldo;
+        }
+        double media = sumaSueldos/n;
+        return media;
     }
 
 }
