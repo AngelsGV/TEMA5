@@ -35,12 +35,25 @@ public class Aplicacion5_15 {
         notaMedia(notas);
         notaMediaAlumno(notas);
     }
-    static void notaMedia(int t[][]){
+    static void notaMedia(int[][] t){
+        // Las medias que se buscan son de las columnas.
+        // La idea es separarlo por trimestres.
+        int sumaNotas = 0; // La suma debe empezar por 0.
+
 
     }
-    static void notaMediaAlumno(int t[][]){
+    static void notaMediaAlumno(int[][] t){
+        // En este caso nos interesaría hacer la media de una fila.
+        Scanner sc = new Scanner(System.in);
         System.out.println("¿ De qué alumno quieres la media? (Pulsa -1 para salir): ");
         // Lo voy a hacer así para que sea más interesante, por si se quiere comprobar más de una media.
+        int alumno = sc.nextInt();
+        while (alumno>5 || alumno < 1){
+            System.out.println("Ese aumno no está en nuestra base de datos.");
+            System.out.println("Vuelva a introducir el número de alumno, por favor: ");
+            alumno = sc.nextInt();
+        }
+
 
     }
 }
@@ -51,5 +64,8 @@ public class Aplicacion5_15 {
 // - Limitar rango de notas de 0 a 10 --> Solucionado a medias, te vuelve a pedir la nota 1 vez.
 // Después si la pones otra vez mal, no la mira. --> CORREGIDO! He pasado de un if-else a un while con la condición
 // érronea dentro del bucle. Así hasta que no cumpla la condición el bucle es infinito.
+
+// PROBLEMAS:
+// - No se como abordar las funciones de las medias, sobretodo no se me ocurre cómo coger una
 
 
