@@ -6,8 +6,11 @@ public class Aplicación5_14 {
         double sueldo = 0;
 
         double contador = 0, sumaSueldos = 0; //Lo inicializamos en 0.
-        double sueldos[] = new double[1]; //El sueldo puede ser con decimales.
+        double sueldos[] = new double[2]; //El sueldo puede ser con decimales.
         // Empezamos la tabla con longitud uno y luego la incrementaremos a medida que vayamos introduciendo valores.
+        // Actualización 2.0. --> He puesto que la longitud sea 2 para tener más margen de error,
+        // pero el principio que usaré es el anterior.
+
         // También podriamos crearla de longitud muy grande y que queden espacios vacíos,
         // ocuparía memoria pero el recolector de basura se haría cargo.
         // Creo que la 1ª opción es la más óptima.
@@ -16,23 +19,15 @@ public class Aplicación5_14 {
         while ( sueldo != -1) {
             System.out.println("Introduce el sueldo (finaliza con -1): ");
             sueldo = sc.nextDouble();
-
+            for (int i=0; i< sueldos.length; i++) {
+                sueldos[i] = sueldo;
+            }
             if (sueldo == -1) {
                 seguirPreguntando = false;
-
-            if(contador == sueldos.length) {
-                sueldos = Arrays.copyOf(sueldos, (int) contador + 1);
-                // Se aumenta la longitud de la array.
-
             }
-            sueldos[(int) contador] = sueldo;
-                sumaSueldos += sueldo;
-                contador++;
-
-
 
         }System.out.println(Arrays.toString(sueldos));
 
     }
 }
-}
+
