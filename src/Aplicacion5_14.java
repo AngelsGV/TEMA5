@@ -22,9 +22,8 @@ public class Aplicacion5_14 {
             System.out.println("Introduce el sueldo (finaliza con -1): ");
             sueldo = sc.nextDouble();
 
-            /*for (int i = 0; i < sueldos.length; i++) {
-                sueldos[i] = sueldo;
-            }*/
+            //for (int i = 0; i < sueldos.length; i++) {
+               // sueldos[i] = sueldo;}
             // Código mal escrito. Al actualizar la forma de hacer este programa he decidido omitirlo.
             // Lo dejo para estudiarlo en el futuro. Pero es inútil.
 
@@ -57,7 +56,7 @@ public class Aplicacion5_14 {
         // Indicamos que max está en indice 0 para poder recorrer el array buscando el maximo real,
         for (double sueldo : t) { // sueldo serán los valores del Array t, que será sueldos.
                 if (sueldo > max) {
-                    sueldo = max;
+                    max = sueldo;
                 }
         }
         System.out.println("El valor máximo será: " + max);
@@ -68,27 +67,24 @@ public class Aplicacion5_14 {
         // Indicamos que min está en indice 0 para poder recorrer el array buscando el minimo real,
         for (double sueldo : t) { // sueldo serán los valores del Array t, que será sueldos.
             if (sueldo < min) {
-                sueldo = min;
+                min = sueldo;
             }
         }
         System.out.println("El valor minimo será: " + min);
     }
-    static void ordenDecreciente(double[] t){ //No hace falta gastar in, porque no devuelve un calculo núerico como tal.
-
-        for(double sueldo:t){//Recorremos toda la array.
-
-            for(int i=t.length; i==0; i--){
-                // Esta vez empezamos por el último indice i vamos decreciendo hasta llegar al 0.
-
-                System.out.println("El orden decreciente es: ");
-                System.out.println(t[i]);
+    static void ordenDecreciente(double[] t) { //No hace falta gastar in, porque no devuelve un calculo núerico como tal.
+            Arrays.sort(t); // Ordenar en orden ascendente
+            System.out.println("El orden decreciente es: ");
+            for (int i = t.length - 1; i >= 0; i--) { // Esta vez empezamos por el último indice i vamos decreciendo hasta llegar al 0.
+              //  System.out.println(t[i]);
             }
+            System.out.println(Arrays.toString(t));
         }
-    }
+
     static double mediaSueldos(double[] t, int n){
         double sumaSueldos = 0;
         for (double sueldo : t){
-           sumaSueldos =+ sueldo;
+           sumaSueldos += sueldo;
         }
         double media = sumaSueldos/n;
         return media;
@@ -99,11 +95,13 @@ public class Aplicacion5_14 {
 //PROBLEMAS:
 // - Cuando sale del bucle para introducir los datos, el array no se ha generado correctamente.
 // - 2.0. Ahora se genera bien pero la longitud final incrementa 1. (Pone un 0)
-// - Valor max y min incorrecto.
-// - Media incorrecta.
+// - Valor max y min incorrecto. --> Corregido!
+//      Error: Sueldo = min X
+//             Min = Sueldo OK
+// - Media incorrecta. --> Corregido :)
 
 //POSIBLES MEJORAS:
-// - Mostrar el orden decreciente en Arrays.
+// - Mostrar el orden decreciente en Arrays. --> Corregido!
 
 //OTRAS FORMAS:
 // - for(int cont;sueldo!=-1;cont++) --> En vez del while del principio.
