@@ -38,9 +38,19 @@ public class Aplicacion5_15 {
     static void notaMedia(int[][] t){
         // Las medias que se buscan son de las columnas.
         // La idea es separarlo por trimestres.
-        int sumaNotas = 0; // La suma debe empezar por 0.
+        int[] sumaTrimestres = new int[3];
+        double[] mediaTrimestres = new double[3];
 
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 5; i++) {
+                sumaTrimestres[j] += t[i][j];
+            }
+            mediaTrimestres[j] = (double) sumaTrimestres[j] / 5;
+        }
 
+        for (int j = 0; j < 3; j++) {
+            System.out.println("La media del trimestre " + (j + 1) + " es: " + mediaTrimestres[j]);
+        }
     }
     static void notaMediaAlumno(int[][] t){
         // En este caso nos interesaría hacer la media de una fila.
@@ -48,15 +58,25 @@ public class Aplicacion5_15 {
         System.out.println("¿ De qué alumno quieres la media? (Pulsa -1 para salir): ");
         // Lo voy a hacer así para que sea más interesante, por si se quiere comprobar más de una media.
         int alumno = sc.nextInt();
+        int sumaNotasAlumno = 0;
         while (alumno>5 || alumno < 1){
             System.out.println("Ese aumno no está en nuestra base de datos.");
             System.out.println("Vuelva a introducir el número de alumno, por favor: ");
             alumno = sc.nextInt();
         }
+        for (int j = 0; j < 3; j++) {
+            sumaNotasAlumno += t[alumno - 1][j];
+        }
 
+        double mediaAlumno = (double) sumaNotasAlumno / 3;
+        System.out.println("La media del alumno " + alumno + " es: " + mediaAlumno);
 
+        System.out.print("¿De qué otro alumno quieres la media? (1-5, pulsa -1 para salir): ");
+        alumno = sc.nextInt();
     }
 }
+
+
 
 
 // -------------------------------------------------
