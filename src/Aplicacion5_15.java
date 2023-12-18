@@ -59,8 +59,13 @@ public class Aplicacion5_15 {
         // Lo voy a hacer así para que sea más interesante, por si se quiere comprobar más de una media.
         int alumno = sc.nextInt();
         int sumaNotasAlumno = 0;
+
         while (alumno != -1){
+            // Se podría poner while(alumno!=-1 && (alumno > 5 || alumno < 1){
+            // pero me parece más facil verlo de esta forma.
+            // cuando he visto 2 while seguidos he visto que se podrían juntar.
             while (alumno > 5 || alumno < 1){
+                //Si sale del rango del grupo de alumnos se vuelve a pedir el valor.
 
             System.out.println("Ese aumno no está en nuestra base de datos.");
             System.out.println("Vuelva a introducir el número de alumno, por favor: ");
@@ -68,12 +73,15 @@ public class Aplicacion5_15 {
             }
 
             for (int j = 0; j < 3; j++) {
-             sumaNotasAlumno += t[alumno - 1][j];
+                //Se recorre el array del trimestre 1 al 3
+                sumaNotasAlumno += t[alumno - 1][j];
+                // Se descuenta 1 al alumno  porque la array va de 0 a 2.
+
 
             double mediaAlumno = (double) sumaNotasAlumno / 3;
             System.out.println("La media del alumno " + alumno + " es: " + mediaAlumno);
 
-             System.out.print("¿De qué otro alumno quieres la media? (1-5, pulsa -1 para salir): ");
+            System.out.print("¿De qué otro alumno quieres la media? (1-5, pulsa -1 para salir): ");
              alumno = sc.nextInt();
              }
         }
@@ -90,6 +98,7 @@ public class Aplicacion5_15 {
 // érronea dentro del bucle. Así hasta que no cumpla la condición el bucle es infinito.
 
 // PROBLEMAS:
-// - No se como abordar las funciones de las medias, sobretodo no se me ocurre cómo coger una
-
+// - No se como abordar las funciones de las medias, sobretodo no se me ocurre cómo coger una --> OK
+// - Conseguí volver a pedir el alumno que se quiere la media, pero si es mayor y ya se ha calculado 1 vez, da error.
+// --> CORREGIDO
 
