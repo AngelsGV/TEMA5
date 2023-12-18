@@ -30,9 +30,17 @@ public class Aplicacion5_15 {
                 notas[i][j] = nota;
             }
         }
+        System.out.println(Arrays.deepToString(notas));
+        // Lo usamos para ver que el programa resuelve correctamente.
         notaMedia(notas);
+        notaMediaAlumno(notas);
     }
     static void notaMedia(int t[][]){
+
+    }
+    static void notaMediaAlumno(int t[][]){
+        System.out.println("¿ De qué alumno quieres la media? (Pulsa -1 para salir): ");
+        // Lo voy a hacer así para que sea más interesante, por si se quiere comprobar más de una media.
 
     }
 }
