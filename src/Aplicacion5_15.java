@@ -81,8 +81,17 @@ public class Aplicacion5_15 {
             double mediaAlumno = (double) sumaNotasAlumno / 3;
             System.out.println("La media del alumno " + alumno + " es: " + mediaAlumno);
 
-            System.out.print("¿De qué otro alumno quieres la media? (1-5, pulsa -1 para salir): ");
-             alumno = sc.nextInt();
+            System.out.print("¿De qué otro alumno quieres la media? (pulsa -1 para salir): ");
+            alumno = sc.nextInt();
+
+            //Si no vuelvo a poner esta situación de control, al poner un número de fuera del rango, me da error.
+                while (alumno > 5 || alumno < 1){
+                    //Si sale del rango del grupo de alumnos se vuelve a pedir el valor.
+
+                    System.out.println("Ese aumno no está en nuestra base de datos.");
+                    System.out.println("Vuelva a introducir el número de alumno, por favor: ");
+                    alumno = sc.nextInt();
+                }
              }
         }
     }
@@ -100,5 +109,5 @@ public class Aplicacion5_15 {
 // PROBLEMAS:
 // - No se como abordar las funciones de las medias, sobretodo no se me ocurre cómo coger una --> OK
 // - Conseguí volver a pedir el alumno que se quiere la media, pero si es mayor y ya se ha calculado 1 vez, da error.
-// --> CORREGIDO
+// --> CORREGIDO, me faltaba la situación de control final.
 
