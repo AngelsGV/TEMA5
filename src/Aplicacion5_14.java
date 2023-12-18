@@ -9,7 +9,7 @@ public class Aplicacion5_14 {
 
         double sueldo = 0;
         int cont=0;
-        double[] sueldos = new double[1]; //El sueldo puede ser con decimales.
+        double[] sueldos = new double[0]; //El sueldo puede ser con decimales.
         // Empezamos la tabla con longitud uno y luego la incrementaremos a medida que vayamos introduciendo valores.
 
         // También podriamos crearla de longitud muy grande y que queden espacios vacíos,
@@ -45,7 +45,7 @@ public class Aplicacion5_14 {
         ordenDecreciente(sueldos);
         maxSueldos(sueldos);
         minSueldos(sueldos);
-        System.out.println("La media de los sueldos es: " + mediaSueldos(sueldos,sueldos.length));
+        System.out.println("La media de los sueldos es: " + mediaSueldos(sueldos,sueldos.length) + " €");
         //El último te lo escribo así para que veas que si que sé usar las funciones que devuelven valores ya.
 
     }
@@ -59,7 +59,7 @@ public class Aplicacion5_14 {
                     max = sueldo;
                 }
         }
-        System.out.println("El valor máximo será: " + max);
+        System.out.println("El valor máximo será: " + max + " €");
     }
     static void minSueldos(double[] t) {
         // Vamos a crear una función para cada apartado del problema. En este caso la función calculará el min.
@@ -70,7 +70,7 @@ public class Aplicacion5_14 {
                 min = sueldo;
             }
         }
-        System.out.println("El valor minimo será: " + min);
+        System.out.println("El valor minimo será: " + min + " €");
     }
     static void ordenDecreciente(double[] t) { //No hace falta gastar in, porque no devuelve un calculo núerico como tal.
             Arrays.sort(t); // Ordenar en orden ascendente
@@ -94,7 +94,9 @@ public class Aplicacion5_14 {
 // ----------------------------------------------------
 //PROBLEMAS:
 // - Cuando sale del bucle para introducir los datos, el array no se ha generado correctamente.
-// - 2.0. Ahora se genera bien pero la longitud final incrementa 1. (Pone un 0)
+// - 2.0. Ahora se genera bien pero la longitud final incrementa 1. (Pone un 0) --Solucionado!
+// Tenía que inicializar la Array en longitud 0. Aunque creemos un array vacío,
+// ya con el primer dato introducido incrementamos el array.
 // - Valor max y min incorrecto. --> Corregido!
 //      Error: Sueldo = min X
 //             Min = Sueldo OK
