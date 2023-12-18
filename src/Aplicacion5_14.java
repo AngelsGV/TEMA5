@@ -1,32 +1,39 @@
 import java.util.Scanner;
 import java.util.Arrays;
+
 public class Aplicacion5_14 {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+
         double sueldo = 0;
         int cont=0;
         double[] sueldos = new double[1]; //El sueldo puede ser con decimales.
         // Empezamos la tabla con longitud uno y luego la incrementaremos a medida que vayamos introduciendo valores.
-        // Actualización 2.0. --> He puesto que la longitud sea 2 para tener más margen de error,
-        // pero el principio que usaré es el anterior.
 
         // También podriamos crearla de longitud muy grande y que queden espacios vacíos,
         // ocuparía memoria pero el recolector de basura se haría cargo.
         // Creo que la 1ª opción es la más óptima.
+
         boolean seguirPreguntando = true; //Lo iniciamos en true porque vamos a poner la condicion en false.
-        //for(int cont;sueldo!=-1;cont++)
+
         while (sueldo != -1) {
             System.out.println("Introduce el sueldo (finaliza con -1): ");
             sueldo = sc.nextDouble();
 
-
             /*for (int i = 0; i < sueldos.length; i++) {
                 sueldos[i] = sueldo;
             }*/
-            if (sueldo == -1) {
+            // Código mal escrito. Al actualizar la forma de hacer este programa he decidido omitirlo.
+            // Lo dejo para estudiarlo en el futuro. Pero es inútil.
+
+            if (sueldo == -1) { // Condición para salir del bucle sin usar break.
                 seguirPreguntando = false;
             }
             else {
+                //Para ir aumentando la longitud de la matriz se deberán hacer copias nuevas ídenticas
+                // pero con incremento de la longitud.
                 sueldos = Arrays.copyOf(sueldos,sueldos.length +1);
                 sueldos[cont] = sueldo;
                 cont++;
@@ -91,6 +98,12 @@ public class Aplicacion5_14 {
 // ----------------------------------------------------
 //PROBLEMAS:
 // - Cuando sale del bucle para introducir los datos, el array no se ha generado correctamente.
+// - 2.0. Ahora se genera bien pero la longitud final incrementa 1. (Pone un 0)
+// - Valor max y min incorrecto.
+// - Media incorrecta.
 
 //POSIBLES MEJORAS:
 // - Mostrar el orden decreciente en Arrays.
+
+//OTRAS FORMAS:
+// - for(int cont;sueldo!=-1;cont++) --> En vez del while del principio.
