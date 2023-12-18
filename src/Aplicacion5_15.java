@@ -30,6 +30,10 @@ public class Aplicacion5_15 {
                 notas[i][j] = nota;
             }
         }
+        notaMedia(notas);
+    }
+    static void notaMedia(int t[][]){
+
     }
 }
 
